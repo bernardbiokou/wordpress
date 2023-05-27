@@ -10,8 +10,6 @@ metadata:
 
     app: wp-ihm
 
-    tier: backend
-
 spec:
 
   replicas: 1
