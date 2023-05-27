@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: wordpress-bdd
+
+  labels:
+
+    app: wp-bdd
+    
+spec:
+
+  replicas: 1
+
+  selector:
+
+    matchLabels:
+
+      app: wp-bdd
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: wp-bdd
+
+      namespace: wordpress
+
+    spec:
+
+      containers:
+
+      - name: wordpress-bdd
+
+        image: mysql:5.7
+
+        env:
+        
+          - name: MYSQL_DATABASE
+            
+            value: wordpress_db
+          
+          - name: MYSQL_USER
+          
+            value: alice
+
+          - name: MYSQL_PASSWORD
+
+            value: password
+
+          - name: MYSQL_RANDOM_ROOT_PASSWORD
+
+            value: '1'
+
+
+
