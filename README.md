@@ -1,8 +1,6 @@
-Installation de wordpress à partir de manifest kubernetes
+wordpress install from kubernetes manifest
 
-appliquer les manifests et tester le fonctionnement.
-
-Ce TP a été réalisé sur minikube
+make on minikube
 
 kubectl apply -f namespace.yaml -n wordpress
 kubectl apply -f deployment-wpbdd.yaml -n wordpress
